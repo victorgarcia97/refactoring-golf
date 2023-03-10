@@ -7,7 +7,7 @@ namespace Hole4
         public readonly int value;
         public readonly String currency;
 
-        public Money(int value, String currency)
+        private Money(int value, String currency)
         {
             this.value = value;
             this.currency = currency;
@@ -35,7 +35,7 @@ namespace Hole4
                 throw new Incalculable();
             }
 
-            return new Money(value - other.value, currency);
+            return Create(value - other.value, currency);
         }
     }
 }
